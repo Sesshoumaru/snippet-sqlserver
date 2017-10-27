@@ -7,7 +7,7 @@ alter table table_name drop column column_name
 declare @name varchar(20)
 select @name = b.name
 from sysobjects b join syscolumns a on b.id = a.cdefault
-where a.id = object_id(table_name) and a.name = column_name
+where a.id = object_id('table_name') and a.name = 'column_name'
 exec('alter table table_name drop constraint ' + @name)
 
 --2.2 删除字段
