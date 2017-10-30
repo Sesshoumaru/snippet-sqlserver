@@ -1,3 +1,6 @@
+-- 功能：在名称为table_name的表删除名称为column_name列
+-- 变量：table_name 表名 column_name 列名
+
 --1. 如果列不存在默认值，则直接删除列
 if exists (select * from sys.columns where object_id = object_id('table_name') and name = 'column_name')
     alter table table_name drop column column_name
